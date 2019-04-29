@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Decimal To Binary</title>
+</head>
+<body>
+<script>
+	/**
+	 * Program: Binary To Decimal
+	 *
+	 * @Author Ana Avila (github.com/anaavila)
+	 *
+	 * @Date December, 2018
+	 *
+	 * @Description
+	 * Simple program that converts decimal numbers to binary
+	 * 
+	 */
+
+	// var decNum = 10;
+	var decNum = prompt("Enter decimal number:");
+	var base = 2;
+	var quotient = 0;
+	var reminder = 0;
+	var binResult= [];
+	var binNum = "";
+
+	while(decNum > 0) {
+		quotient = Math.floor(decNum/base);
+		reminder = decNum%base;
+		decNum = quotient;
+		if(reminder == 1) {
+			binResult.unshift(1);
+		}
+		else {
+			binResult.unshift(0);
+		}
+	}
+
+	for (var i = 0; i < binResult.length; i++) {
+		binNum = binNum + binResult[i];
+	}
+
+	alert(binNum);
+</script>
+</body>
+</html>
